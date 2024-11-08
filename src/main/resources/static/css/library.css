@@ -1,0 +1,92 @@
+/* 기본 레이아웃 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+nav.main--menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav.main--menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+nav.main--menu ul li {
+    margin-right: 20px;
+}
+
+nav.main--menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    width: 200px;
+}
+
+.upload-section, .song-list {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section h2, .song-list h2 {
+    margin-bottom: 10px;
+}
+
+.upload-form input, .upload-form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.song-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+audio {
+    width: 200px;
+}
+
+.delete-song {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-song:hover {
+    background-color: darkred;
+}
+

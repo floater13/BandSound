@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="fragment-nav">
+    <header class="d-flex flex-column">
+        <div class="header--top">
+            <ul>
+                <li class="material--li"><span class="material-symbols-outlined">account_circle</span></li>
+                <li>박성희님 (230001)</li>
+                <li style="margin: 0 15px;">ㅣ</li>
+                <li class="material--li"><span style="color: #9BD2EC;" class="material-symbols-outlined">logout</span></li>
+                <li><a href="/logout">로그아웃</a></li>
+            </ul>
+        </div>
+
+        <nav class="main--menu">
+            <a href="/"><img class="logo" alt="" src="/images/logo.png"></a>
+            <!-- userRole에 따라 메뉴 다르게 표시 -->
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/library">LIBRARY</a></li>
+                <li><a href="/user/studentList">MYPLAYLIST</a></li>
+                <li><a href="/staff">내프로필</a></li>
+            </ul>
+
+            <!-- 검색창 -->
+            <!-- 검색창을 내프로필 옆에 배치 -->
+            <form action="/search" method="GET" class="search-form">
+                <button type="submit" class="search-button">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <input type="text" name="query" placeholder="검색어를 입력하세요" class="search-input">
+            </form>
+        </nav>
+    </header>
+</div>
+</html>
