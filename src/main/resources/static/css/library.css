@@ -1,92 +1,290 @@
-/* 기본 레이아웃 설정 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+@charset "UTF-8";
+.main--page--div {
+    width: 1142px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
+.main--page--img {
+    width: 60%;  /* 화면 너비의 60%로 줄이기 */
+    max-width: 1152px;  /* 최대 너비를 1920px의 약 60%로 설정 */
+    height: auto;  /* 비율 유지 */
+    margin-bottom: 40px;
+}
+
+.material-symbols-rounded {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40;
+}
+
+.material--bold {
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48 !important;
+}
+
+.material--small {
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 40 !important;
+}
+
+/* 부모 컨테이너의 너비를 80%로 설정하고, 가운데 정렬 */
+.library--page--notice {
+    width: 80%;          /* 부모 컨테이너의 너비를 80%로 설정 */
+    margin: 0 auto;      /* 좌우 마진을 자동으로 설정하여 가운데 정렬 */
+    padding: 20px 0;     /* 위아래에 패딩 추가 */
+    max-width: 1200px;   /* 최대 너비를 설정하여 너무 넓어지지 않게 설정 */
+}
+
+/* 테이블의 전체 너비를 100%로 설정 */
+.library--page--notice table {
+    width: 100%; /* 테이블이 부모 컨테이너의 너비를 모두 차지하도록 설정 */
+    table-layout: fixed; /* 테이블 셀의 너비를 고정값으로 처리 */
+    border-collapse: collapse; /* 테이블 셀의 경계선을 병합 */
+}
+
+/* 각 셀의 스타일 (패딩, 정렬) */
+.library--page--notice th, .library--page--notice td {
+    padding: 12px 20px; /* 셀 내 간격을 넓게 설정 */
+    text-align: left; /* 왼쪽 정렬 */
+    vertical-align: middle; /* 세로 정렬을 중앙으로 */
+    white-space: nowrap; /* 텍스트가 한 줄로 나오도록 설정 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 내용이 넘칠 경우 말줄임표(...)로 처리 */
+}
+
+/* 제목 열의 너비를 더 넓게 설정 */
+.library--page--notice th:nth-child(1),
+.library--page--notice td:nth-child(1) {
+    width: 40%;  /* 제목 열의 너비를 40%로 설정 */
+}
+
+/* 작성자 열의 너비를 중간 크기로 설정 */
+.library--page--notice th:nth-child(2),
+.library--page--notice td:nth-child(2) {
+    width: 20%; /* 작성자 열의 너비를 20%로 설정 */
+}
+
+/* 날짜 열의 너비를 설정 */
+.library--page--notice th:nth-child(3),
+.library--page--notice td:nth-child(3) {
+    width: 15%; /* 날짜 열의 너비를 15%로 설정 */
+}
+
+/* 상세보기 열의 너비를 설정 */
+.library--page--notice th:nth-child(4),
+.library--page--notice td:nth-child(4) {
+    width: 15%; /* 상세보기 열의 너비를 15%로 설정 */
+}
+
+/* 조회수 열의 너비를 설정 */
+.library--page--notice th:nth-child(5),
+.library--page--notice td:nth-child(5) {
+    width: 10%; /* 조회수 열의 너비를 10%로 설정 */
+}
+
+/* 제목, 작성자, 날짜를 가로로 배치 */
+table td a {
+    font-size: 19px; /* 링크 글씨 크기 */
+}
+
+/* 제목 스타일 */
+.library--page--notice h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.library--page--notice h3 + .library--page--split {
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+/* 제목, 작곡자, 날짜를 가로로 배치 */
+table {
+    width: 100%; /* 테이블 너비 100% */
+    border-collapse: collapse; /* 셀의 경계선 병합 */
+}
+
+table td {
+    padding: 12px; /* 각 셀에 여백 추가 */
+    vertical-align: middle; /* 수직 정렬 */
+}
+
+/* 제목 스타일 */
+.title {
+    font-size: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 작곡자 이름 스타일 */
+.composer {
+    font-size: 16px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 20px; /* 제목과 작곡자 사이 간격 추가 */
+}
+
+/* 날짜 스타일 */
+.date {
+    font-size: 16px;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 20px; /* 작곡자와 날짜 사이 간격 추가 */
+}
+
+/* 테이블 내 각 항목 간 간격을 더 늘려주기 */
+.library--page--notice tr td,
+.main--page--calendar tr td {
+    display: table-cell; /* 테이블 셀로 표시 */
+}
+
+/* 테이블의 구분선 */
+.library--page--split {
+    height: 2px;
+    width: 100%;
+    background-color: #808080;
+    margin-bottom: 10px;
+}
+
+.library--page--notice h3,
+.main--page--calendar h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* 구분선 */
+.main--page--split {
+    height: 2px;
+    width: 100%;
+    background-color: #808080;
+    margin-bottom: 10px;
+}
+
+
+.main--page--div h3 a {
+    font-weight: 600;
+    color: #808080;
+}
+
+.main--page--profile {
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 60px;
+    margin-top: -600px;  /* 검색창 아래로 위치하도록 여백을 설정 */
+}
+
+.main--page--profile table {
+    margin-bottom: 25px;
+}
+
+.main--page--profile table td {
+    color: #585858;
+    height: 27px;
+}
+
+.main--page--profile table tr td:first-of-type {
+    padding-right: 20px;
+}
+
+.profile--button--div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile--button--div button {
+    background-color: #98afcb;
+    padding: 3px 13px 4px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.main--page--info {
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    margin-left: 60px;
+    padding: 20px;
+}
+
+.main--page--info p {
+    margin: 10px 0 0 0;
+    color: #585858;
+}
+
+.main--page--info p a {
+    color: #1d57a3;
+    font-weight: 600;
+}
+
+footer {
+    margin: 80px 0 30px 0;
+    text-align: center;
+}
+
+/* nav.main--menu는 기존 flexbox로 유지 */
 nav.main--menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    width: 100%;
 }
 
+/* 메뉴 항목들이 가로로 배치되도록 설정 */
 nav.main--menu ul {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 nav.main--menu ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* 메뉴 항목 간의 간격 */
 }
 
-nav.main--menu a {
-    color: white;
-    text-decoration: none;
-}
-
+/* 내프로필 오른쪽에 검색창 배치 */
 .search-form {
     display: flex;
-    align-items: center;
+    align-items: center; /* 버튼과 입력창 수직 중앙 정렬 */
+    margin-left: 20px; /* 내프로필과 검색창 사이의 간격 */
 }
 
-.search-input {
-    padding: 5px;
+/* 검색 버튼 스타일 */
+.search-button {
+    background-color: transparent;
     border: none;
-    border-bottom: 2px solid #ccc;
-    outline: none;
-    width: 200px;
-}
-
-.upload-section, .song-list {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.upload-section h2, .song-list h2 {
-    margin-bottom: 10px;
-}
-
-.upload-form input, .upload-form button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
-}
-
-.song-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.song-title {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-audio {
-    width: 200px;
-}
-
-.delete-song {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
     cursor: pointer;
+    height: 36px; /* 버튼의 높이 설정 */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
-.delete-song:hover {
-    background-color: darkred;
+/* 돋보기 아이콘 색과 크기 설정 */
+.search-button .material-symbols-outlined {
+    font-size: 24px;
+    color: #808080; /* 아이콘 색을 회색으로 변경 */
 }
 
+/* 검색 입력창 스타일: 밑줄만 보이게 하고 가로로 길게 만듦 */
+.search-input {
+    padding: 8px 12px; /* 적당한 여백을 추가 */
+    border: none;
+    border-bottom: 2px solid #ccc; /* 밑줄만 추가 */
+    outline: none; /* 포커스 시 테두리 생기는 현상 제거 */
+    flex-grow: 1; /* 검색창을 가능한 길게 만들기 */
+    min-width: 300px; /* 최소 너비 */
+    height: 36px; /* 입력창 높이 설정 */
+}
